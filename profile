@@ -46,7 +46,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Profil Pengguna</h2>
+        <h2>Welcome To my site</h2>
         <div class="profile-info">
             <p><strong>Nama:</strong> <span id="profileName"></span></p>
             <p><strong>Email:</strong> <span id="profileEmail"></span></p>
