@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Pelajaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        footer p {
+            margin: 5px 0;
+            color: #333;
+        }
+        footer a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jadwal Pelajaran</h1>
+    <table id="jadwalTable">
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Mapel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan secara dinamis -->
+        </tbody>
+    </table>
+    <button onclick="loadData()">Tampilkan Jadwal</button>
+
+    <script>
+        // Data jadwal
+        const jadwalData = [
+            { hari: "Senin", jam: "07.30", mapel: "B.indo" },
+            { hari: "Senin", jam: "09.00", mapel: "Kelistrikan" },
+            { hari: "Selasa", jam: "07.30", mapel: "PKK" },
+            { hari: "Rabu", jam: "07.30", mapel: "PAI" },
+            { hari: "Kamis", jam: "07.30", mapel: "Aswaja" },
+            { hari: "Kamis", jam: "10.30", mapel: "Nihong" }
+        ];
+
+        // Fungsi untuk memuat data ke tabel
+        function loadData() {
+            const tableBody = document.querySelector("#jadwalTable tbody");
+            tableBody.innerHTML = ""; // Kosongkan tabel sebelum menambahkan data
+
+            jadwalData.forEach(item => {
+                const row = `<tr>
+                                <td>${item.hari}</td>
+                                <td>${item.jam}</td>
+                                <td>${item.mapel}</td>
+                            </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+    </script>
+<footer>
+    <p>&copy; 2025 By kong</p>
+    <p>Follow my GitHub: <a href="https://github.com/aboutkong" target="_blank">aboutkong</a></p>
+</footer>
+</body>
+</html>
